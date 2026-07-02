@@ -1,0 +1,8 @@
+# Python cache
+__pycache__/
+*.py[cod]
+
+# Project data (will be created later)
+vault.json
+vault.enc
+auth.json
