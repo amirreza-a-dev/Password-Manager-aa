@@ -8,7 +8,7 @@ This project is a command-line password manager built to improve my Python skill
 
 ## Features
 
-- [ ] Add passwords
+- ✅ Add passwords
 - [ ] View saved passwords
 - [ ] Search passwords
 - [ ] Delete passwords
