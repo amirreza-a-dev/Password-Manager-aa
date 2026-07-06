@@ -3,6 +3,8 @@ import json
 from pathlib import Path
 
 data = None
+VAULT_PATH = Path(__file__).parent / "vault.json"
+
 def clear():
     os.system("cls" if os.name=="nt" else "clear")
 
@@ -15,8 +17,6 @@ def load_data():
         global data
         data = json.load(f)
 
-VAULT_PATH = Path(__file__).parent / "vault.json"
-
 if not VAULT_PATH.exists():
     with open(VAULT_PATH, "w", encoding="utf-8",) as f:
         json.dump([], f)
@@ -28,7 +28,8 @@ def main():
         print("     1. Add Password")
         print("     2. Search Password")
         print("     3. Delete Password")
-        print("     4. Exit")
+        print("     4. Update Password")
+        print("     5. Exit")
         print("------------=------------")
         choice = input("Enter your choice: ")
         clear()
@@ -74,6 +75,30 @@ def main():
             clear()
 
         elif choice=="4":
+            website = input("Website / Application: ")
+            username = input("Username: ")
+            password = input("Current password: ")
+            for item in data:
+                if item["website"] == website and item["username"] == username and item["password"] == password:
+                    new_password = input("New password: ")
+                    repeat_password = input("Repeat the new password: ")
+                    if new_password == repeat_password:
+                        item["password"] = new_password
+                        dump_data()
+                        print("------------------\nPassword updated successfully.\n------------------")
+                        input("Press Enter to continue...")
+                        break
+                    else:
+                        print("------------------\nNew password not verified.\nTry again.\n------------------")
+                        input("Press Enter to continue...")
+                        clear()
+                        break
+            else: 
+                print("------------------\nRecord not found...\n------------------")
+                input("Press Enter to continue...")
+            clear()
+
+        elif choice=="5":
             break
 
         else:
