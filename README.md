@@ -11,7 +11,7 @@ This project is a command-line password manager built to improve my Python skill
 - [x] Add passwords
 - [ ] View saved passwords
 - [x] Search passwords
-- [ ] Delete passwords
+- [x] Delete passwords
 - [ ] Master Password authentication
 - [ ] Password generator
 - [ ] Encrypted password vault
