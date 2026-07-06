@@ -27,9 +27,9 @@ def main():
             username = input("Username: ")
             password = input("Password: ")
             d = {
-                "Website" : website,
-                "Username" : username,
-                "Password" : password
+                "website" : website,
+                "username" : username,
+                "password" : password
             }
             data.append(d)
             with open(VAULT_PATH, "w", encoding="utf-8") as f:
@@ -38,12 +38,22 @@ def main():
             input("Press Enter to continue...")
             clear()
         elif choice=="2":
-            print("Working...")
+            website = input("Website / Application: ")
+            username = input("Username: ")
+            for item in data:
+                if item["website"] == website and item["username"] == username:
+                    print(f'------------------\nYour password is: {item["password"]}\n------------------')
+                    break
+            else:
+                print("------------------\nPassword not found...\n------------------")
             input("Press Enter to continue...")
             clear()
         elif choice=="3":
             break
-        else: print("Invalid input!\nTry again.")
+        else:
+            print("Invalid input!\nTry again.")
+            input("Press Enter to continue...")
+            clear()     
 
 
 if __name__ == "__main__":
