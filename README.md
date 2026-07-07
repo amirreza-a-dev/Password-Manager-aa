@@ -9,11 +9,11 @@ This project is a command-line password manager built to improve my Python skill
 ## Features
 
 - [x] Add passwords
-- [ ] View saved passwords
+- [x] View saved accounts
 - [x] Search passwords
 - [x] Delete passwords
-- [x] Update Passwords
-- [ ] Master Password authentication
+- [x] Update passwords
+- [ ] Master password authentication
 - [ ] Password generator
 - [ ] Encrypted password vault
 
